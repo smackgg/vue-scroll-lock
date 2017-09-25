@@ -1,0 +1,32 @@
+{
+  "name": "vue-prevent-parent-scroll",
+  "version": "0.0.1",
+  "description": "Vue component for prevent parent scroll",
+  "main": "dist/vue-prevent-parent-scroll.min.js",
+  "scripts": {
+    "dev": "webpack-dev-server --inline --hot --host=0.0.0.0 --port=8080",
+    "doc": "cross-env NODE_ENV=production BUILD=doc webpack --progress --hide-modules",
+    "build": "cross-env NODE_ENV=production BUILD=publish webpack --progress --hide-modules"
+  },
+  "keywords": [
+    "vue",
+    "scroll",
+    "prevent parent",
+    "prevent",
+    "prevent-parent-scroll"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smackgg/vue-prevent-parent-scroll.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smackgg/vue-prevent-parent-scroll/issues"
+  },
+  "homepage": "https://github.com/smackgg/vue-prevent-parent-scroll#readme",
+  "devDependencies": {
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.8.2"
+  }
+}
