@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div tabIndex="0">
     <slot></slot>
   </div>
 </template>
@@ -31,7 +31,7 @@
     methods: {
       bindEvent () {
         this.$el.addEventListener('wheel', this.onWheelHandler, false)
-        this.$el.addEventListener('keyup', this.onWheelHandler, false)
+        this.$el.addEventListener('keydown', this.onKeyDownHandler, false)
         this.$el.addEventListener('touchstart', this.onTouchStartHandler)
         this.$el.addEventListener('touchmove', this.onTouchMoveHandler, false)
       },
