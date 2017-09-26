@@ -1,32 +1,53 @@
 {
-  "name": "vue-prevent-parent-scroll",
+  "name": "vue-tactful-scroll",
   "version": "0.0.1",
   "description": "Vue component for prevent parent scroll",
-  "main": "dist/vue-prevent-parent-scroll.min.js",
+  "main": "lib/vue-tactful-scroll.min.js",
   "scripts": {
-    "dev": "webpack-dev-server --inline --hot --host=0.0.0.0 --port=8080",
-    "doc": "cross-env NODE_ENV=production BUILD=doc webpack --progress --hide-modules",
-    "build": "cross-env NODE_ENV=production BUILD=publish webpack --progress --hide-modules"
+    "dev": "webpack-dev-server --inline --hot",
+    "build": "cross-env NODE_ENV=production BUILD=build webpack --progress --hide-modules",
+    "publish": "cross-env NODE_ENV=production BUILD=publish webpack --progress --hide-modules",
+    "lint": "eslint --fix ./"
   },
   "keywords": [
     "vue",
     "scroll",
     "prevent parent",
     "prevent",
-    "prevent-parent-scroll"
+    "prevent-parent-scroll",
+    "vue-tactful-scroll",
+    "tactful scroll",
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/smackgg/vue-prevent-parent-scroll.git"
+    "url": "https://github.com/smackgg/vue-tactful-scroll.git"
   },
-  "author": "",
+  "author": "smackgg <smackgg@gmail.com>",
+  "homepage": "https://github.com/smackgg/vue-tactful-scroll",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/smackgg/vue-prevent-parent-scroll/issues"
   },
-  "homepage": "https://github.com/smackgg/vue-prevent-parent-scroll#readme",
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "cross-env": "^5.0.5",
+    "css-loader": "^0.28.7",
+    "eslint": "^4.7.2",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "moment": "^2.18.1",
+    "vue-loader": "^13.0.5",
+    "vue-template-compiler": "^2.4.4",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.8.2"
+  },
+  "dependencies": {
+    "vue": "^2.4.4"
   }
 }
