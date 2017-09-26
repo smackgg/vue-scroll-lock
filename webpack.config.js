@@ -27,8 +27,7 @@ module.exports = {
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.common.js',
-      // 'vue-scroller': path.resolve(__dirname, './src')
-      // 'vue-scroller': path.resolve(__dirname, './dist/vue-scroller.min.js')
+      'vue-tactful-scroll': path.resolve(__dirname, './src'),
     },
   },
   devServer: {
