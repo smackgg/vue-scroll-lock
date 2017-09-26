@@ -1,0 +1,20 @@
+module.exports = {
+  root: true,
+  parser: 'babel-eslint',
+  extends: 'standard',
+  'rules': {
+    'no-extend-native': 0,
+    'arrow-parens': 0,
+    'eqeqeq': 0,
+    'no-return-assign': 0,
+    'no-var': 2,
+    'semi': [2, 'never'],
+    'space-before-function-paren': [2, 'always'],
+    'yoda': 0,
+    'arrow-spacing': 2,
+    'dot-location': [2, 'property'],
+    'comma-dangle': [2, 'always-multiline'],
+    'generator-star-spacing': 0,
+    'no-new': 0,
+  },
+}
