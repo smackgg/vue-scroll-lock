@@ -35,6 +35,12 @@
         this.$el.addEventListener('touchstart', this.onTouchStartHandler)
         this.$el.addEventListener('touchmove', this.onTouchMoveHandler, false)
       },
+      removeEvent () {
+        this.$el.removeEventListener('wheel', this.onWheelHandler, false)
+        this.$el.removeEventListener('keydown', this.onKeyDownHandler, false)
+        this.$el.removeEventListener('touchstart', this.onTouchStartHandler)
+        this.$el.removeEventListener('touchmove', this.onTouchMoveHandler, false)
+      },
       onTouchStartHandler (e) {
         const events = e.touches[0] || e
         this.pageY = events.pageY
@@ -104,6 +110,10 @@
 
     mounted () {
       this.bindEvent()
+    },
+
+    beforeDestroy () {
+      this.removeEvent()
     },
   }
 </script>
