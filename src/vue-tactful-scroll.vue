@@ -68,6 +68,7 @@
           return
         }
       },
+
       onWheelHandler (e) {
         this.handleEventDelta(e, e.deltaY)
       },
