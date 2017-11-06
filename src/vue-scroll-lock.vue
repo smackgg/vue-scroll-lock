@@ -1,5 +1,5 @@
 <template>
-  <div tabIndex="0">
+  <div class="lock-wrapper" tabIndex="0">
     <slot></slot>
   </div>
 </template>
@@ -16,10 +16,16 @@
   ]
   export default {
     name: 'VueTactfulScroll',
+
     componentName: 'VueTactfulScroll',
-    // props: {
-    //   parentNoScroll: true,
-    // },
+
+    props: {
+      bodyLock: {
+        default: false,
+        type: Boolean,
+      },
+    },
+
     data () {
       return {
         pageY: 0,
@@ -28,25 +34,39 @@
       }
     },
 
+    watch: {
+      bodyLock (val) {
+        this.handleBodyLock(val)
+      }
+    },
+
     methods: {
+      handleBodyLock (bodyLock) {
+        if (bodyLock) document.querySelector('html').classList.add('body-noscroll')
+        else document.querySelector('html').classList.remove('body-noscroll')
+      },
+
       bindEvent () {
         this.$el.addEventListener('wheel', this.onWheelHandler, false)
         this.$el.addEventListener('keydown', this.onKeyDownHandler, false)
         this.$el.addEventListener('touchstart', this.onTouchStartHandler)
         this.$el.addEventListener('touchmove', this.onTouchMoveHandler, false)
       },
+
       removeEvent () {
         this.$el.removeEventListener('wheel', this.onWheelHandler, false)
         this.$el.removeEventListener('keydown', this.onKeyDownHandler, false)
         this.$el.removeEventListener('touchstart', this.onTouchStartHandler)
         this.$el.removeEventListener('touchmove', this.onTouchMoveHandler, false)
       },
+
       onTouchStartHandler (e) {
         const events = e.touches[0] || e
         this.pageY = events.pageY
         this.scrollTop = this.$el.scrollTop
         this.maxHeight = this.$el.scrollHeight - this.$el.clientHeight
       },
+
       onTouchMoveHandler (e) {
         if (this.maxHeight <= 0) {
           this.cancelScrollEvent(e)
@@ -111,6 +131,7 @@
 
     mounted () {
       this.bindEvent()
+      this.handleBodyLock(this.bodyLock)
     },
 
     beforeDestroy () {
@@ -118,3 +139,16 @@
     },
   }
 </script>
+
+<style>
+  .lock-wrapper {
+    -webkit-overflow-scrolling: touch;
+  }
+  .body-noscroll,
+  .body-noscroll body {
+    overflow: hidden;
+  }
+  .body-noscroll body {
+    position: relative;
+  }
+</style>
