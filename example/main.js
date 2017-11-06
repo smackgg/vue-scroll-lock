@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
 
-import TactfulScroll from 'vue-tactful-scroll'
-Vue.use(TactfulScroll)
+import VueScrollLock from '../src/index'
+Vue.use(VueScrollLock)
 
 new Vue({
   el: '#app',

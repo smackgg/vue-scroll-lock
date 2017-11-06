@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <tactful-scroll class="wrapper">
+    <scroll-lock :bodyLock="true" class="wrapper">
       <div class="content">
         <h2>Content</h2>
       </div>
-    </tactful-scroll>
+    </scroll-lock>
   </div>
 </template>
 <style>
@@ -28,6 +28,7 @@
     box-sizing: border-box;
     background: #000;
     overflow: scroll;
+    -webkit-overflow-scrolling: touch;
     padding: 20px;
     line-height: 1.8;
   }
