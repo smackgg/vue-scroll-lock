@@ -136,6 +136,7 @@
 
     beforeDestroy () {
       this.removeEvent()
+      document.querySelector('html').classList.remove('body-noscroll')
     },
   }
 </script>
