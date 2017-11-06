@@ -1,8 +1,8 @@
 {
-  "name": "vue-tactful-scroll",
+  "name": "vue-scroll-lock",
   "version": "0.0.1",
   "description": "Vue component for prevent parent scroll",
-  "main": "lib/vue-tactful-scroll.min.js",
+  "main": "lib/vue-scroll-lock.min.js",
   "scripts": {
     "dev": "webpack-dev-server --inline --hot",
     "build": "cross-env NODE_ENV=production BUILD=build webpack --progress --hide-modules",
@@ -15,18 +15,18 @@
     "prevent parent",
     "prevent",
     "prevent-parent-scroll",
-    "vue-tactful-scroll",
+    "vue-scroll-lock",
     "tactful scroll"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/smackgg/vue-tactful-scroll.git"
+    "url": "https://github.com/smackgg/vue-scroll-lock.git"
   },
   "author": "smackgg <smackgg@gmail.com>",
-  "homepage": "https://github.com/smackgg/vue-tactful-scroll",
+  "homepage": "https://github.com/smackgg/vue-scroll-lock",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/smackgg/vue-prevent-parent-scroll/issues"
+    "url": "https://github.com/smackgg/vue-scroll-lock/issues"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

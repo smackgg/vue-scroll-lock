@@ -1,18 +1,18 @@
-import TactfulScroll from './vue-tactful-scroll.vue'
+import ScrollLock from './vue-scroll-lock.vue'
 
 function install (Vue) {
   if (install.installed) return
   install.installed = true
-  Vue.component('tactful-scroll', TactfulScroll)
+  Vue.component('scroll-lock', ScrollLock)
 }
 
-const VueTactfulScroll = {
+const VueScrollLock = {
   install: install,
-  TactfulScroll,
+  ScrollLock,
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(VueTactfulScroll)
+  window.Vue.use(VueScrollLock)
 }
 
-export default VueTactfulScroll
+export default VueScrollLock
