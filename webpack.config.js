@@ -34,7 +34,7 @@ module.exports = {
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.common.js',
-      'vue-tactful-scroll': path.resolve(__dirname, './src'),
+      'vue-scroll-lock': path.resolve(__dirname, './src'),
     },
   },
   devServer: {
@@ -70,8 +70,8 @@ if (process.env.NODE_ENV === 'production') {
     module.exports.entry = './src/index.js'
     module.exports.output = {
       path: path.resolve(__dirname, './lib'),
-      filename: 'vue-tactful-scroll.min.js',
-      library: 'VueTactfulScroll',
+      filename: 'vue-scroll-lock.min.js',
+      library: 'VueScrollLock',
       libraryTarget: 'umd',
       umdNamedDefine: true,
     }
@@ -85,7 +85,7 @@ if (process.env.NODE_ENV === 'production') {
     // Banner
     let moment = require('moment')
     let pkg = require('./package.json')
-    let banner = 'Vue Scroller \nversion: ' + pkg.version + ' \nrepo: https://github.com/smackgg/vue-tactful-scroll \nbuild: ' + moment().format('YYYY-MM-DD HH:mm:ss')
+    let banner = 'Vue Scroller \nversion: ' + pkg.version + ' \nrepo: https://github.com/smackgg/vue-scroll-lock \nbuild: ' + moment().format('YYYY-MM-DD HH:mm:ss')
 
     module.exports.plugins.push(
       new webpack.BannerPlugin({
