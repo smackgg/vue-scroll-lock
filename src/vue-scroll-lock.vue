@@ -20,6 +20,10 @@
     componentName: 'VueTactfulScroll',
 
     props: {
+      lock: {
+        default: true,
+        type: Boolean,
+      },
       bodyLock: {
         default: false,
         type: Boolean,
@@ -35,15 +39,18 @@
     },
 
     watch: {
-      bodyLock (val) {
-        this.handleBodyLock(val)
-      }
+      bodyLock () {
+        this.handleBodyLock()
+      },
+      lock (val) {
+        val ? this.init() : this.destroy()
+      },
     },
 
     methods: {
-      handleBodyLock (bodyLock) {
-        if (bodyLock) document.querySelector('html').classList.add('body-noscroll')
-        else document.querySelector('html').classList.remove('body-noscroll')
+      handleBodyLock () {
+        if (this.bodyLock) this.html.classList.add('body-noscroll')
+        else this.html.classList.remove('body-noscroll')
       },
 
       bindEvent () {
@@ -60,6 +67,16 @@
         this.$el.removeEventListener('touchmove', this.onTouchMoveHandler, false)
       },
 
+      init () {
+        this.bindEvent()
+        this.handleBodyLock()
+      },
+
+      destroy () {
+        this.removeEvent()
+        this.html.classList.remove('body-noscroll')
+      },
+
       onTouchStartHandler (e) {
         const events = e.touches[0] || e
         this.pageY = events.pageY
@@ -69,8 +86,8 @@
 
       onTouchMoveHandler (e) {
         if (this.maxHeight <= 0) {
-          this.cancelScrollEvent(e)
         }
+        this.cancelScrollEvent(e)
         const elScroll = this.$el
         // current scroll top
         const scrollTop = elScroll.scrollTop
@@ -130,13 +147,12 @@
     },
 
     mounted () {
-      this.bindEvent()
-      this.handleBodyLock(this.bodyLock)
+      this.html = document.querySelector('html')
+      this.lock && this.init()
     },
 
     beforeDestroy () {
-      this.removeEvent()
-      document.querySelector('html').classList.remove('body-noscroll')
+      this.destroy()
     },
   }
 </script>
@@ -144,6 +160,7 @@
 <style>
   .lock-wrapper {
     -webkit-overflow-scrolling: touch;
+    outline: none;
   }
   .body-noscroll,
   .body-noscroll body {
