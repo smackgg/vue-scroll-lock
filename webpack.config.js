@@ -1,5 +1,5 @@
-let path = require('path')
-let webpack = require('webpack')
+const path = require('path')
+const webpack = require('webpack')
 
 module.exports = {
   entry: './example/main.js',
@@ -18,6 +18,10 @@ module.exports = {
         },
       },
       {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader',
+      },
+      {
         test: /\.js$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
@@ -28,6 +32,23 @@ module.exports = {
         options: {
           name: '[name].[ext]?[hash]',
         },
+      },
+      {
+        test: /\.md$/,
+        use: [
+          {
+            loader: 'html-loader',
+          },
+          {
+            loader: 'markdown-loader',
+            options: {
+              name: '[name].[ext]?[hash]',
+              highlight: function (code) {
+                return require('highlight.js').highlightAuto(code).value
+              },
+            },
+          },
+        ],
       },
     ],
   },
@@ -41,7 +62,7 @@ module.exports = {
     historyApiFallback: true,
     noInfo: true,
     host: '0.0.0.0',
-    port: 8080,
+    port: 8089,
   },
   devtool: '#eval-source-map',
 }
