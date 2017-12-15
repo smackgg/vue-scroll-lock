@@ -1,12 +1,35 @@
 <template>
   <div id="app">
-    <scroll-lock :bodyLock="true" class="wrapper">
-      <div class="content">
-        <h2>Content</h2>
-      </div>
+    <div class="">
+      <button @click="toggleLock" type="button" name="button">
+        {{ this.lock ? 'unlock' : 'lock' }}
+      </button>
+    </div>
+    <markdown class="markdown-body"></markdown>
+    <scroll-lock :lock="lock" :bodyLock="false" class="wrapper markdown-body">
     </scroll-lock>
   </div>
 </template>
+<script type="text/javascript">
+import md from '../README.md';
+
+export default {
+  name: 'ThirdActivity',
+  data () {
+    return {
+      lock: true,
+    }
+  },
+  components: {
+    markdown: md,
+  },
+  methods: {
+    toggleLock () {
+      this.lock = !this.lock
+    },
+  }
+}
+</script>
 <style>
   * {
     margin: 0;
@@ -17,25 +40,16 @@
   }
   body {
     height: 2000px;
-    background: #2196f3;
     padding: 30px;
-    background-image: url('./assets/icon_2.png');
-    background-size: 200px 200px;
   }
   .wrapper {
-    width: 70%;
-    height: 70vh;
+    width: 100%;
+    height: 40vh;
     box-sizing: border-box;
-    background: #000;
+    /*background: #000;*/
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
     padding: 20px;
     line-height: 1.8;
   }
-
-  .content {
-    height: 2000px;
-    background-image: url('./assets/icon_1.png');
-  }
-
 </style>
