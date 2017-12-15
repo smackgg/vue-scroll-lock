@@ -35,21 +35,25 @@ module.exports = {
       },
       {
         test: /\.md$/,
-        use: [
-          {
-            loader: 'html-loader',
-          },
-          {
-            loader: 'markdown-loader',
-            options: {
-              name: '[name].[ext]?[hash]',
-              highlight: function (code) {
-                return require('highlight.js').highlightAuto(code).value
-              },
-            },
-          },
-        ],
+        loader: 'vue-markdown-loader',
       },
+      // {
+      //   test: /\.md$/,
+      //   use: [
+      //     {
+      //       loader: 'html-loader',
+      //     },
+      //     {
+      //       loader: 'markdown-loader',
+      //       options: {
+      //         name: '[name].[ext]?[hash]',
+      //         highlight: function (code) {
+      //           return require('highlight.js').highlightAuto(code).value
+      //         },
+      //       },
+      //     },
+      //   ],
+      // },
     ],
   },
   resolve: {
