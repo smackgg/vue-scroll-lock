@@ -7,7 +7,7 @@ function install (Vue) {
 }
 
 const VueScrollLock = {
-  install: install,
+  install,
   ScrollLock,
 }
 
