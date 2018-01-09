@@ -1,5 +1,7 @@
 <template>
-  <div class="lock-wrapper" tabIndex="0">
+  <div class="lock-wrapper" :class="{
+    'lock--active': lock,
+  }" tabIndex="0">
     <slot></slot>
   </div>
 </template>
@@ -56,7 +58,7 @@
       bindEvent () {
         this.$el.addEventListener('wheel', this.onWheelHandler, false)
         this.$el.addEventListener('keydown', this.onKeyDownHandler, false)
-        this.$el.addEventListener('touchstart', this.onTouchStartHandler)
+        this.$el.addEventListener('touchstart', this.onTouchStartHandler, false)
         this.$el.addEventListener('touchmove', this.onTouchMoveHandler, false)
       },
 
@@ -86,8 +88,9 @@
 
       onTouchMoveHandler (e) {
         if (this.maxHeight <= 0) {
+          this.cancelScrollEvent(e)
+          return;
         }
-        this.cancelScrollEvent(e)
         const elScroll = this.$el
         // current scroll top
         const scrollTop = elScroll.scrollTop
@@ -159,8 +162,10 @@
 
 <style>
   .lock-wrapper {
-    -webkit-overflow-scrolling: touch;
     outline: none;
+  }
+  .lock-wrapper.lock--active {
+    -webkit-overflow-scrolling: touch;
   }
   .body-noscroll,
   .body-noscroll body {
