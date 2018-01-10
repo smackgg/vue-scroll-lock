@@ -110,7 +110,6 @@ export default {
   }
 }
 </script>
-<style src="./common.css"></style>
 <style lang="less">
   * {
     margin: 0;
