@@ -5,7 +5,7 @@
 
 *在下图区域滚动，到底部或顶部继续滑动时就会触发父级滚动。*
 
-<div style="height: 150px; width: 200px; overflow: scroll">
+<div style="height: 150px; width: 200px; overflow: scroll;">
   <img style="width: 100%;" src="http://7xl432.com1.z0.glb.clouddn.com/vue-scroll-lock__demo1.jpg"></img>
   <img style="width: 100%;" src="http://7xl432.com1.z0.glb.clouddn.com/vue-scroll-lock__demo1.jpg"></img>
 </div>
