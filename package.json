@@ -1,6 +1,6 @@
 {
   "name": "vue-scroll-lock",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Vue component for prevent parent scroll",
   "main": "lib/vue-scroll-lock.min.js",
   "scripts": {
