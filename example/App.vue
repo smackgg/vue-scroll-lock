@@ -3,13 +3,17 @@
     <div class="wrapper markdown-body" :class="{
         'modal--show': showModal
       }">
-      <markdown></markdown>
 
       <div id="demo" class="demo">
+        <h2>介绍</h2>
+        <div class="demo-content">
+          <p>我们经常遇到一种情况。当滑动滚动条区域时，子元素滚动条到底部或顶部时就会触发父级滚动条，父级滚动条同理会继续向上触发，直至body容器。这是浏览器默认的滚动行为。</p>
+          <p>但是很多情况，我们想要子元素滚动完成后，不触发父元素的滚动，比如 modal、侧边栏 等等。</p>
+        </div>
         <h2>例子</h2>
         <h3>1. 上文提到的例子</h3>
         <div class="demo-content">
-          <span>作为对比，下方列出两种情况的例子</span>
+          <span>下面是很常见的滚动至边界触发父级滚动的例子。作为对比，下面将阻止滚动和未阻止滚动两种情况都列出：</span>
           <div class="demo4-wrapper">
             <scroll-lock class="demo4">
               滑动此区域，父级不会跟随滚动
@@ -37,7 +41,11 @@
           <span>当 lock 属性为 false 时（也就是浏览器默认的表现形式）。当滑动中间内容区域至顶部或底部，都会导致触发父级页面滚动；滑动旁边模糊遮罩区域，body容器也会正常滚动。</span>
         </div>
       </div>
+
+      <markdown></markdown>
+
     </div>
+
     <div class="modal-wrapper" v-show="showModal">
       <div class="mask" @touchmove="onMaskTouchMove"></div>
       <div class="modal">
@@ -178,8 +186,6 @@ export default {
 
 
   .demo {
-    padding-top: 100px;
-
     h3 {
       margin-bottom: 20px;
     }
