@@ -11,7 +11,7 @@
           <p>但是很多情况，我们想要子元素滚动完成后，不触发父元素的滚动，比如 modal、侧边栏 等等。</p>
         </div>
         <h2>例子</h2>
-        <h3>1. 上文提到的例子</h3>
+        <h3>1. 最常见的例子</h3>
         <div class="demo-content">
           <span>下面是很常见的滚动至边界触发父级滚动的例子。作为对比，下面将阻止滚动和未阻止滚动两种情况都列出：</span>
           <div class="demo4-wrapper">
@@ -27,7 +27,7 @@
             </scroll-lock>
           </div>
         </div>
-        <h3>2. 常见的 Modal 例子（点击蓝色字体查看例子）</h3>
+        <h3>2. Modal（点击蓝色字体查看例子）</h3>
         <div class="demo-content">
           <span class="demo-content__link" @click="showDemo1">Demo1:</span>
           <span>当 lock 属性为 true 时（默认）。当滑动中间内容至顶部或底部，父级不会跟着滚动；当滑动旁边模糊遮罩区域，body容器仍然会正常滚动。</span>
@@ -78,9 +78,9 @@ export default {
   },
   components: {
     markdown: md,
-    Demo1: Demo1,
-    Demo2: Demo2,
-    Demo3: Demo3,
+    Demo1,
+    Demo2,
+    Demo3,
   },
   methods: {
     toggleLock () {
