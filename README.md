@@ -2,6 +2,8 @@
 
 一个 VUE 组件：子元素 scroll 父元素容器不跟随滚动（兼容PC、移动端）
 
+【 React 请移步 [react-scroll-lock-component](https://github.com/orteth01/react-scroll-lock-component) 】
+
 ## 文档 & 例子
 
 [Document & Demo](https://smackgg.github.io/vue-scroll-lock)
