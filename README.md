@@ -37,3 +37,11 @@ Vue.use(VueScrollLock)
 | --- | --- | --- | --- | --- |
 | lock | 是否阻止父级滚动 |Boolean | true/false | true |
 | bodyLock | 是否阻止body容器滚动 |Boolean | true/false | false |
+
+## THANKS
+
+移动端的实现参考张鑫旭的[web移动端浮层滚动阻止window窗体滚动JS/CSS处理](http://www.zhangxinxu.com/wordpress/2016/12/web-mobile-scroll-prevent-window-js-css/)
+
+## LICENSE
+
+MIT
