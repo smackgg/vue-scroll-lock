@@ -43,7 +43,7 @@ Vue.use(VueScrollLock)
 
 ## 贡献
 
-欢迎 Start、PR
+欢迎 Star、PR
 
 ```
 // install
