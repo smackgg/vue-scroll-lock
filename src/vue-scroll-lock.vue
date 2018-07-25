@@ -129,7 +129,7 @@
 
       handleEventDelta (e, delta) {
         const isDeltaPositive = delta > 0
-        const el = this.$el
+        const el = e.target.tagName === 'TEXTAREA' ? e.target : this.$el
         const { scrollTop, scrollHeight, clientHeight } = el
 
         let shouldCancelScroll = false
