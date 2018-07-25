@@ -114,7 +114,9 @@
       },
 
       onKeyDownHandler (e) {
-        if (upKeys.indexOf(e.keyCode) >= 0) {
+        if (e.target.tagName.match(/^(TEXTAREA|INPUT)$/)) {
+          return
+        } else if (upKeys.indexOf(e.keyCode) >= 0) {
           this.handleEventDelta(e, -1)
         } else if (downKeys.indexOf(e.keyCode) >= 0) {
           this.handleEventDelta(e, 1)
