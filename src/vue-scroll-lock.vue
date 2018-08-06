@@ -114,7 +114,9 @@
       },
 
       onKeyDownHandler (e) {
-        if (upKeys.indexOf(e.keyCode) >= 0) {
+        if (e.target.tagName.match(/^(TEXTAREA|INPUT)$/)) {
+          return
+        } else if (upKeys.indexOf(e.keyCode) >= 0) {
           this.handleEventDelta(e, -1)
         } else if (downKeys.indexOf(e.keyCode) >= 0) {
           this.handleEventDelta(e, 1)
@@ -129,7 +131,7 @@
 
       handleEventDelta (e, delta) {
         const isDeltaPositive = delta > 0
-        const el = this.$el
+        const el = e.target.tagName === 'TEXTAREA' ? e.target : this.$el
         const { scrollTop, scrollHeight, clientHeight } = el
 
         let shouldCancelScroll = false
