@@ -1,5 +1,6 @@
 # 此方案已不是最优方案，不在维护！！！
 vue 请移步 [v-scroll-lock](https://github.com/phegman/v-scroll-lock)
+
 react 请移步 [react-scrolllock](https://github.com/jossmac/react-scrolllock)
 
 
