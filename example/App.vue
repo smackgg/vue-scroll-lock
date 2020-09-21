@@ -18,13 +18,13 @@
           <div class="demo4-wrapper">
             <scroll-lock class="demo4">
               滑动此区域，父级不会跟随滚动
-              <img src="http://7xl432.com1.z0.glb.clouddn.com/vue-scroll-lock__demo1.jpg" alt="">
-              <img src="http://7xl432.com1.z0.glb.clouddn.com/vue-scroll-lock__demo1.jpg" alt="">
+              <img src="http://my-home-static.smackgg.cn/vue-scroll-lock__demo1.jpg" alt="">
+              <img src="http://my-home-static.smackgg.cn/vue-scroll-lock__demo1.jpg" alt="">
             </scroll-lock>
             <scroll-lock :lock="false" class="demo4">
               滑动此区域，父级会跟随滚动
-              <img src="http://7xl432.com1.z0.glb.clouddn.com/vue-scroll-lock__demo1.jpg" alt="">
-              <img src="http://7xl432.com1.z0.glb.clouddn.com/vue-scroll-lock__demo1.jpg" alt="">
+              <img src="http://my-home-static.smackgg.cn/vue-scroll-lock__demo1.jpg" alt="">
+              <img src="http://my-home-static.smackgg.cn/vue-scroll-lock__demo1.jpg" alt="">
             </scroll-lock>
           </div>
         </div>
